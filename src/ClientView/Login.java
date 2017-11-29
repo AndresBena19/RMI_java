@@ -114,21 +114,18 @@ public class Login extends javax.swing.JFrame {
         boolean f= false;
         try{
             
+            //Se crean los registros donde el objeto estara hospedado, junto al pueto donde estara a la escuchsa
             Registry reg = LocateRegistry.createRegistry(4444);
+            //Se define una instancia de la interface
             UserInterface lp= new UserImplements();
+            //Se ingresa  al objeto e los registros 
             reg.rebind("user2", lp);
             System.out.println("Server is ready");
             
-            
+            //Se capturan los valores introducidos por el usuario
             lp.setName(textusername.getText());
             lp.setPassword(textpassword.getText());
-            
-            
-            
-            
-            
-            
-
+   
             
         }catch (Exception ex){
             ex.printStackTrace();
